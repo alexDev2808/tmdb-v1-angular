@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   imgParent = '';
+
+  onLoaded(urlImg: string) {
+    console.log("Url: ", urlImg);
+
+  }
 }
