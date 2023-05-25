@@ -7,13 +7,15 @@ import { ImgComponent } from './components/img/img.component';
 import { FormsModule } from '@angular/forms';
 import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImgComponent,
     MovieComponent,
-    MoviesComponent
+    MoviesComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
