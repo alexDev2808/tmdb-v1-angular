@@ -8,6 +8,8 @@ import { Movie } from 'src/app/models/movie.model';
 })
 export class MoviesComponent {
 
+  myFavMovies: Movie[] = [];
+
   movies: Movie[] = [
     {
       id: "1",
@@ -40,4 +42,8 @@ export class MoviesComponent {
       poster: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/voAxRv011XHK2qFBXmZKXPj2wWB.jpg"
     }
   ]
+
+  onAddToFavs(movie: Movie) {
+    this.myFavMovies.push(movie);
+  }
 }

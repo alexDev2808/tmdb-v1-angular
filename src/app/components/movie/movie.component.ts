@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Movie } from 'src/app/models/movie.model';
 
 @Component({
@@ -13,5 +13,11 @@ export class MovieComponent {
     title: '',
     overview: '',
     poster: ''
+  }
+
+  @Output() addedToFav = new EventEmitter<Movie>();
+
+  onAddToFav () {
+    this.addedToFav.emit(this.movie);
   }
 }
