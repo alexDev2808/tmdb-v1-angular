@@ -9,6 +9,7 @@ import { Movie } from './models/movie.model';
 })
 export class AppComponent {
   imgParent = '';
+  showImg = true;
 
   movies: Movie[] = [
     {
@@ -46,5 +47,9 @@ export class AppComponent {
   onLoaded(urlImg: string) {
     console.log("Url: ", urlImg);
 
+  }
+
+  toggleImg() {
+    this.showImg = !this.showImg;
   }
 }

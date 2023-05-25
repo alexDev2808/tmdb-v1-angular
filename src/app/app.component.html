@@ -1,6 +1,6 @@
-
+<button (click)="toggleImg()">Toggle img</button>
 <input type="text" [(ngModel)]="imgParent">
-<app-img (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
-
+<p>{{ showImg }}</p>
+<app-img *ngIf="showImg" (loaded)="onLoaded($event)" [changeImg]="imgParent"></app-img>
 
 <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
