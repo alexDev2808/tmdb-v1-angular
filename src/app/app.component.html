@@ -3,3 +3,4 @@
 <app-img (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
 
 
+<app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
