@@ -1,14 +1,14 @@
 
 <div class="card mt-4">
-  <app-img [changeImg]="movie.poster"></app-img>
+  <app-img [changeImg]="getUrlImg()"></app-img>
   <div class="card-body d-flex flex-column justify-content-between">
     <div>
       <h5 class="card-title fw-bold">{{ movie.title }}</h5>
       <p class="card-text">{{ movie.overview }}</p>
     </div>
-    <div class="d-flex justify-content-between">
-      <a href="#" class="btn btn-primary align-self-end fw-bolder">Ver detalles</a>
-      <button type="button" (click)="onAddToFav()" class="btn btn-danger align-self-start fw-bolder">Añadir a favoritos</button>
+    <div class="d-flex justify-content-between mt-4">
+      <a href="#" class="btn btn-md btn-primary align-self-end fw-bold">Ver detalles</a>
+      <button type="button" (click)="onAddToFav()" class="btn btn-sm btn-danger align-self-end fw-bold">Añadir a favoritos</button>
     </div>
   </div>
 </div>

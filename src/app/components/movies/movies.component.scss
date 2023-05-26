@@ -10,7 +10,14 @@
     gap: 20px;
   }
 }
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 64em) and (max-width: 94.9em){
+  .movies--grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 95em) {
   .movies--grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
