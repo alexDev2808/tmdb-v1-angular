@@ -10,6 +10,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class MoviesComponent implements OnInit {
 
+  fecha = new Date();
   myFavMovies: Movie[] = [];
 
   // movies: Movie[] = [

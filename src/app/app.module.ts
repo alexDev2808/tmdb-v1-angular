@@ -9,6 +9,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     ImgComponent,
     MovieComponent,
     MoviesComponent,
-    NavComponent
+    NavComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

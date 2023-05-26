@@ -12,7 +12,6 @@ export class AppComponent {
   showImg = true;
 
 
-
   onLoaded(urlImg: string) {
     console.log("Url: ", urlImg);
 
