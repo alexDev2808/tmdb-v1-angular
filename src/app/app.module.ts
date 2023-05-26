@@ -10,6 +10,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     MovieComponent,
     MoviesComponent,
     NavComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
