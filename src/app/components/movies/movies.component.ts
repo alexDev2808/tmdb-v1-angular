@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Movie } from 'src/app/models/movie.model';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-movies',
@@ -43,7 +44,14 @@ export class MoviesComponent {
     }
   ]
 
+  constructor(
+    private storeService: StoreService
+
+  ) {
+    this.myFavMovies = this.storeService.getMyFavMovies();
+  }
+
   onAddToFavs(movie: Movie) {
-    this.myFavMovies.push(movie);
+    this.storeService.addMovie(movie);
   }
 }
