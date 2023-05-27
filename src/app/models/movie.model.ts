@@ -1,8 +1,4 @@
 export interface Movie {
-  // id: string,
-  // title: string,
-  // poster: string,
-  // overview: string
   adult: boolean,
   backdrop_path: string,
   genre_ids: [],

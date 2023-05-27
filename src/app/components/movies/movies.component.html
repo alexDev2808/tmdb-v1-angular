@@ -1,3 +1,4 @@
+<button type="button" (click)="toggleShowDetail()">Abrir</button>
 <div class="container">
   <h3 appHighlight class="text-white mt-4">Peliculas favoritas: {{ myFavMovies.length }}</h3>
   <h6 class="text-white">Ultima actualizacion: {{ fecha | timeAgo }}</h6>
@@ -7,6 +8,14 @@
   *ngFor="let movie of movies"
   [movie]="movie"
   (addedToFav)="onAddToFavs($event)"
+  (showMovie)="onShowDetail($event)"
   >
   </app-movie>
+</div>
+
+<div class="product-detail" [class.active]="showMovieDetail">
+  <div class="product-detail--container">
+    <button type="button" (click)="toggleShowDetail()">Cerrar</button>
+    Contenido
+  </div>
 </div>

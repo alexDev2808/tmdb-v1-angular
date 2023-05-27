@@ -28,6 +28,7 @@ export class MovieComponent {
   }
 
   @Output() addedToFav = new EventEmitter<Movie>();
+  @Output() showMovie = new EventEmitter<string>();
 
   onAddToFav () {
     this.addedToFav.emit(this.movie);
@@ -35,5 +36,9 @@ export class MovieComponent {
 
   getUrlImg() {
     return this.urlImg + this.movie.poster_path;
+  }
+
+  onShowDetail() {
+    this.showMovie.emit(this.movie.id);
   }
 }
