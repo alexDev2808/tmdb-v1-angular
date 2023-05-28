@@ -1,3 +1,4 @@
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @NgModule({
   declarations: [
@@ -26,9 +30,11 @@ import { HighlightDirective } from './directives/highlight.directive';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

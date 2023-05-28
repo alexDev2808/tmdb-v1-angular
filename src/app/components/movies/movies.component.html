@@ -1,4 +1,3 @@
-<button type="button" (click)="toggleShowDetail()">Abrir</button>
 <div class="container">
   <h3 appHighlight class="text-white mt-4">Peliculas favoritas: {{ myFavMovies.length }}</h3>
   <h6 class="text-white">Ultima actualizacion: {{ fecha | timeAgo }}</h6>
@@ -13,9 +12,33 @@
   </app-movie>
 </div>
 
-<div class="product-detail" [class.active]="showMovieDetail">
-  <div class="product-detail--container">
-    <button type="button" (click)="toggleShowDetail()">Cerrar</button>
-    Contenido
+<div class="product-detail overflow-scroll" [class.active]="showMovieDetail">
+  <div *ngIf="movieChosen" class="container mt-5 pt-3">
+    <div>
+      <button type="button" class="btn btn-outline-danger btn-sm mb-4" (click)="toggleShowDetail()">Cerrar</button>
+    </div>
+    <div>
+      <swiper-container class="card">
+        <swiper-slide *ngFor="let img of movieChosenImgs.posters">
+          <img class="card-img-top" [src]="urlImg + img.file_path" alt="Poster Oficial Pelicula">
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <div>
+      <h2 class="fw-bold mt-4">{{ movieChosen.title }} ( {{ movieChosen.release_date | date : 'yyyy' }} )</h2>
+      <div class="datos--small gap-2">
+        <small>{{ movieChosen.release_date }} (MX) |  </small>
+        <div class="d-flex gap-2">
+          <small *ngFor="let genre of movieChosen.genres">{{ genre.name }}</small>
+        </div>
+        <small>  | {{ movieChosen.runtime }}mins</small>
+      </div>
+      <p class="mt-4">{{ movieChosen.tagline }}</p>
+      <div>
+        <h4>Overview</h4>
+        <p>{{ movieChosen.overview }}</p>
+      </div>
+    </div>
+
   </div>
 </div>

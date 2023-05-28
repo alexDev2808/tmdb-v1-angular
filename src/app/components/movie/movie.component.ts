@@ -13,7 +13,7 @@ export class MovieComponent {
   @Input() movie: Movie = {
     adult: false,
     backdrop_path: '',
-    genre_ids: [],
+    genres: [],
     id: '',
     original_languaje: '',
     original_title: '',
@@ -24,7 +24,9 @@ export class MovieComponent {
     title: '',
     video: false,
     vote_average: 0,
-    vote_count: 0
+    vote_count: 0,
+    tagline: '',
+    runtime: 0
   }
 
   @Output() addedToFav = new EventEmitter<Movie>();
