@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Movie, MovieImages, MovieResponse } from '../models/movie.model';
+import { CreateMovieDTO, Movie, MovieImages, MovieResponse } from '../models/movie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,9 @@ export class MoviesService {
 
   getImages(id: string) {
     return this.http.get<MovieImages>(`${this.url_api}/${id}/images${this.api_key}`);
+  }
+
+  create(dto: CreateMovieDTO) {
+    return this.http.post<Movie>(`${this.url_api}${this.api_key}`, dto);
   }
 }

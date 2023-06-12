@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie, MovieImages, UrlPosters } from 'src/app/models/movie.model';
+import { CreateMovieDTO, Movie, MovieImages, UrlPosters } from 'src/app/models/movie.model';
 import { StoreService } from 'src/app/services/store.service';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -79,6 +79,32 @@ export class MoviesComponent implements OnInit {
     this.moviesService.getImages(id)
     .subscribe(data => {
       this.movieChosenImgs = data;
+    })
+  }
+
+  createNewMovie() {
+    const movie: CreateMovieDTO = {
+      adult: false,
+      backdrop_path: '',
+      original_languaje: '',
+      original_title: '',
+      overview: '',
+      popularity: 0,
+      poster_path: '',
+      release_date: '',
+      title: '',
+      video: false,
+      vote_average: 0,
+      vote_count: 0,
+      runtime: 0,
+      tagline: '',
+      genreId: 1
+    }
+
+    this.moviesService.create(movie)
+    .subscribe(data => {
+      console.log("created", data);
+      this.movies.unshift(data)
     })
   }
 }

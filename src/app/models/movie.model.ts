@@ -17,6 +17,10 @@ export interface Movie {
   tagline: string
 }
 
+export interface CreateMovieDTO extends Omit<Movie, 'id' | 'genres'>{
+  genreId: number
+}
+
 export interface Genres {
   id: number,
   name: string
